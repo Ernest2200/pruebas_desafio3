@@ -12,7 +12,7 @@ export default function Home() {
 
     React.useLayoutEffect(() => {
         navigation.setOptions({
-            headerRight: () => <RN.Button title='Add' onPress={() => navigation.navigate('Add')} />
+            headerRight: () => <RN.Button title='Añadir' onPress={() => navigation.navigate('Add')} />
         })
     },[navigation])
 
@@ -39,7 +39,7 @@ export default function Home() {
     return(
         <RN.View style={styles.container}>
             <RN.ScrollView contentContainerStyle={{paddingBottom: 100}}>
-            <RN.Text style={styles.title}>Products</RN.Text>
+            <RN.Text style={styles.title}>Productos</RN.Text>
                 {products.map(product => <Product key={product.id} {...product} />)}
             </RN.ScrollView>
         </RN.View>
