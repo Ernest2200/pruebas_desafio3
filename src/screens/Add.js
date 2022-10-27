@@ -31,7 +31,7 @@ export default function Add() {
 
     const onSend = async () => {
         if (!newItem.name.trim()) {
-            alert("Ingrese un nombre para el producto");
+            alert("Ingrese un nombre para el producto y precio ");
             return;
         }else{
             const docRef = await addDoc(collection(database, 'products'), newItem);
@@ -64,6 +64,8 @@ export default function Add() {
         </RN.View>
     )
 }
+
+
 
 const styles = RN.StyleSheet.create({
     container: {
