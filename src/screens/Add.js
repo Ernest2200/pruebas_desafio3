@@ -36,7 +36,7 @@ export default function Add() {
 
     return(
         <RN.View style={styles.container}>
-            <RN.Text style={styles.title}>Sell a New Product</RN.Text>
+            <RN.Text style={styles.title}>Vender un producto nuevo</RN.Text>
             <RN.Text onPress={() => setIsOpen(true)} style={styles.emoji}>{newItem.emoji}</RN.Text>
             <EmojiPicker
                 onEmojiSelected={handlePick}
