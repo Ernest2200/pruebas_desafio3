@@ -30,8 +30,15 @@ export default function Add() {
     }
 
     const onSend = async () => {
-        const docRef = await addDoc(collection(database, 'products'), newItem);
-        navigation.goBack();
+        if (!newItem.name.trim()) {
+            alert("Ingrese un nombre para el producto");
+            return;
+        }else{
+            const docRef = await addDoc(collection(database, 'products'), newItem);
+            navigation.goBack();
+
+        }
+       
       }
 
     return(
