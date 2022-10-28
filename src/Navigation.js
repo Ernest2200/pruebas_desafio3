@@ -8,8 +8,8 @@ const Stack = createNativeStackNavigator();
 function MyStack() {
     return(
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={Home}/>
-            <Stack.Screen name="Add" component={Add} options={{presentation: 'modal'}}/>
+            <Stack.Screen name="Inicio" component={Home}/>
+            <Stack.Screen name="Agregar" component={Add} options={{presentation: 'modal'}}/>
         </Stack.Navigator>
     )
 }
