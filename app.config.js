@@ -2,7 +2,7 @@ import 'dotenv/config';
 
 export default {
   "expo": {
-    "name": "CRUD_Firebase",
+    "name": "Mi tiendita",
     "slug": "CRUD_Firebase",
     "version": "1.0.0",
     "orientation": "portrait",
