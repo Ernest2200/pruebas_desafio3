@@ -1,7 +1,39 @@
 import Navigation from "./src/Navigation";
+import React, {useState, useEffect} from 'react';
+import NetInfo from "@react-native-community/netinfo";
+import { View, ScrollView, Text} from 'react-native';
+
 
 export default function App() {
+  const [checkConection, setCheckConection] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = NetInfo.addEventListener(state => {
+      console.log("Connection type", state.type);
+      console.log("Is connected", state.isConnected);
+  
+      if(state.isConnected == true){
+        setCheckConection(true)
+        console.log(checkConection);
+      }else{
+        setCheckConection(false)
+        console.log(checkConection);
+      }
+  });
+  unsubscribe();
+    }); 
+
+
   return (
-    <Navigation />
-  );
+  <>
+    {checkConection ? (
+    <Navigation/>
+  ):(
+    <View>
+    <Text>Necesitas estar conectado a internet</Text>
+    </View>
+    
+  )} 
+  </>
+  )
 }

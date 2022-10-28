@@ -20,7 +20,8 @@ export default {
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "mitiendita"
     },
     "android": {
       "package": "com.crud",
