@@ -2,6 +2,7 @@ import Navigation from "./src/Navigation";
 import React, {useState, useEffect} from 'react';
 import NetInfo from "@react-native-community/netinfo";
 import { View, ScrollView, Text} from 'react-native';
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 export default function App() {
@@ -34,9 +35,9 @@ export default function App() {
     {checkConection ? (
     <Navigation/>
   ):(
-    <View>
+    <SafeAreaView>
     <Text>Necesitas estar conectado a internet</Text>
-    </View>
+    </SafeAreaView>
     
   )} 
   </>
