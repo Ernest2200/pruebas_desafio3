@@ -35,11 +35,15 @@ export default function Add() {
       */
     }
 
-    const onSend = async () => {
+      const onSend = async () => {
         if (!newItem.name.trim() || !newItem.price.trim()) {
             alert("Ingrese el nombre y precio del producto");
             return;
-        }else{
+        }else if(checkValidPrice == true){
+          alert("Ingrese un valor valido");
+          return;
+        }
+        else{
             const docRef = await addDoc(collection(database, 'products'), newItem);
             navigation.goBack();
 
