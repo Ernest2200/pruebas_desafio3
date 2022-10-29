@@ -9,20 +9,25 @@ export default function App() {
 
   useEffect(() => {
     const unsubscribe = NetInfo.addEventListener(state => {
-      console.log("Connection type", state.type);
-      console.log("Is connected", state.isConnected);
-  
-      if(state.isConnected == true){
-        setCheckConection(true)
-        console.log(checkConection);
-      }else{
-        setCheckConection(false)
-        console.log(checkConection);
-      }
+
+        NetInfo.fetch().then(state => {
+          console.log("Connection type", state.type);
+          console.log("Is connected?", state.details);
+          if(state.isInternetReachable == true){
+          setCheckConection(true);
+          console.log(checkConection);
+          }else{
+            setCheckConection(false)
+            console.log(checkConection);
+          }
+        });
+      
+       
+      
   });
   unsubscribe();
     }); 
-
+   
 
   return (
   <>
