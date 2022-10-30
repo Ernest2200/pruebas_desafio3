@@ -1,7 +1,8 @@
 import Navigation from "./src/Navigation";
 import React, {useState, useEffect} from 'react';
 import NetInfo from "@react-native-community/netinfo";
-import { View, ScrollView, Text} from 'react-native';
+import { View, ScrollView, Text, StyleSheet } from 'react-native';
+import { Icon} from "react-native-elements";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
@@ -35,11 +36,26 @@ export default function App() {
     {checkConection ? (
     <Navigation/>
   ):(
-    <SafeAreaView>
-    <Text>Necesitas estar conectado a internet</Text>
-    </SafeAreaView>
+    <View style={styles.content}>
+    <Icon type='material-community' name='alert-outline' size={80}/>
+    <Text style={styles.text}>Necesitas tener conexión a internet para utilizar la aplicación</Text>
+  </View>
     
   )} 
   </>
   )
 }
+
+
+export const styles = StyleSheet.create({
+  content:{
+      flex:1,
+      alignItems:"center",
+      justifyContent:"center"
+  },
+  text:{
+      fontSize:20,
+      fontWeight:"bold",
+      marginTop:20,
+  }
+});
